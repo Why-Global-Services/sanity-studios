@@ -8,6 +8,7 @@ import plotSummary from './plotSummary'
 import plotSummaries from './plotSummaries'
 import banner from './banner'
 import LatestMovies from './LatestMovies'
+import tvshowclient from './tvshowclient'
 export const schemaTypes = [
   // Document types
   movie,
@@ -15,6 +16,7 @@ export const schemaTypes = [
   screening,
   banner,
   LatestMovies,
+  tvshowclient,
 
   // Other types
   blockContent,
