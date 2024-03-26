@@ -13,6 +13,11 @@ import LastestmoviesSlide from './Home/LastestmoviesSlide'
 import Studios from './Home/Studios'
 import Events from './Events/Events'
 
+import assosiatePartners from './Client/assosiatePartners'
+import eventClient from './Client/eventClient'
+import blog from './Home/blog'
+import movies from './MovieProduction/movies'
+import MovieDetail from './MovieProduction/MovieDetail'
 
 export const schemaTypes = [
   // Document types
@@ -25,6 +30,12 @@ export const schemaTypes = [
 LastestmoviesSlide,
 Studios,
 Events,
+  LastestmoviesSlide,
+  assosiatePartners,
+  eventClient,
+  blog,
+  movies,
+  MovieDetail,
   // Other types
   blockContent,
   plotSummary,
