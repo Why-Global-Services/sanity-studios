@@ -2,33 +2,50 @@ import {defineField, defineType} from 'sanity'
 // import { MdMovieEdit as icon } from "react-icons/md";
 import { MdMovie as icon } from 'react-icons/md'
 export default defineType({
-    name:"moviesslider",
-    title:"Movie Slider",
+    name:"studios",
+    title:"Why Studio",
     type:"document",
     icon,
     fields:[
         defineField({
-            name:"image",
-            title:"Slider Image",
-            type:"image",
-            options: {hotspot: true},
+            name:"heading",
+            title:"First Heading",
+            type:"text",
+            rows:3,
+           
 
-}),defineField({
-    name:"moviename",
-    title:"Movie Name",
-    type:"string",
+}),
+
+defineField({
+    name:"secondheading",
+    title:"Second Heading",
+    type:"text",
+    rows:5
 }),
 defineField({
-    name:"moviegenre",
-    title:"Movie Genre",
+    name:"content",
+    title:"Content",
     type:"text",
     rows:3
     
+}),
+defineField({
+    name:"image",
+    title:"Thumbnail",
+    type:"image",
+    options: {hotspot: true},
+    
+}),
+defineField({
+    name:"youtube",
+    title:"YouTube Source Link",
+    type:"text",
+    rows:20,
 })
 
 ],preview:{
     select: {
-        title: 'moviename',
+        title: 'heading',
         date: 'releaseDate',
         media: 'image',
        

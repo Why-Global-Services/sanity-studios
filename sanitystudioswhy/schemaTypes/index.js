@@ -10,6 +10,10 @@ import banner from './Home/banner'
 import LatestMovies from './Home/LatestMovies'
 import tvshowclient from './Home/tvshowclient'
 import LastestmoviesSlide from './Home/LastestmoviesSlide'
+import Studios from './Home/Studios'
+import Events from './Events/Events'
+
+
 export const schemaTypes = [
   // Document types
   movie,
@@ -19,6 +23,8 @@ export const schemaTypes = [
   LatestMovies,
   tvshowclient,
 LastestmoviesSlide,
+Studios,
+Events,
   // Other types
   blockContent,
   plotSummary,
