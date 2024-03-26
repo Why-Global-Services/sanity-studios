@@ -6,9 +6,10 @@ import person from './person'
 import screening from './screening'
 import plotSummary from './plotSummary'
 import plotSummaries from './plotSummaries'
-import banner from './banner'
-import LatestMovies from './LatestMovies'
-import tvshowclient from './tvshowclient'
+import banner from './Home/banner'
+import LatestMovies from './Home/LatestMovies'
+import tvshowclient from './Home/tvshowclient'
+import LastestmoviesSlide from './Home/LastestmoviesSlide'
 export const schemaTypes = [
   // Document types
   movie,
@@ -17,7 +18,7 @@ export const schemaTypes = [
   banner,
   LatestMovies,
   tvshowclient,
-
+LastestmoviesSlide,
   // Other types
   blockContent,
   plotSummary,
