@@ -30,7 +30,7 @@ export const schemaTypes = [
 LastestmoviesSlide,
 Studios,
 Events,
-  LastestmoviesSlide,
+ 
   assosiatePartners,
   eventClient,
   blog,
