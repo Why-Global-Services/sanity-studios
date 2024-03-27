@@ -6,7 +6,7 @@ import {MdLocalMovies as icon} from 'react-icons/md'
 
 export default defineField({
     name: 'MovieDetail',
-    title: 'Images',
+    title: 'Movie Detail',
     type: 'document',
     fields: [
         {
