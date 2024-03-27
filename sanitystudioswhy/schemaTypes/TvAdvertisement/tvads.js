@@ -11,6 +11,7 @@ export default defineType({
         name: 'Image',
         title: 'Tv Shows Url',
         type: 'text',
+        placeholder:"(kindly Copy the Source from the Embeded Link Provided in Youtube )",
         rows:3
       }),
       defineField({
@@ -27,22 +28,21 @@ export default defineType({
     ],
     preview: {
       select: {
-        title: 'title',
+        title: 'Title',
         date: 'releaseDate',
-        media: 'poster',
-        castName0: 'castMembers.0.person.name',
-        castName1: 'castMembers.1.person.name',
+        media: 'image',
+     
       },
-      prepare(selection) {
-        const year = selection.date && selection.date.split('-')[0]
-        const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+      // prepare(selection) {
+      //   const year = selection.date && selection.date.split('-')[0]
+      //   const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
   
-        return {
-          title: 'TvAdvertisement',
-          date: selection.date,
-          subtitle: cast,
-          media: selection.media,
-        }
-      },
+      //   return {
+      //     title: 'Titles',
+      //     date: selection.date,
+      //     subtitle: cast,
+      //     media: selection.media,
+      //   }
+      // },
     },
   })

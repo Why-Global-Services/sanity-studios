@@ -71,6 +71,8 @@ export default defineField({
                   },
             ],
         },
+
+
         {
             name: 'SecondContent',
             title: 'Network & Status',
@@ -230,6 +232,130 @@ export default defineField({
                   },
             ],
         },
+        {
+          name:"storyline",
+          type:"array",
+          title:"Story Line",
+          of:[
+            {
+              type:"object",
+              fields:[{
+                name:"line",
+                title:"Story Line",
+                type:"text",
+                rows:4
+              },{
+                name:"Genres",
+                title:"Genres",
+                type:"string",
+              
+              },
+              {
+                name:"ReleaseDate",
+                title:"Release Date",
+                type:"string"
+              },{
+                name:"Languages",
+                title:"Languages",
+                type:"array",
+                of:[
+                  {
+                    type:"object",
+                    fields:[
+                      {
+                        name:"Language",
+                        title:"Language",
+                        type:"string",
+                      },
+                    ]
+                  }]
+              },{
+                name:"Country",
+                title:"Country",
+                type:"text",
+                rows:2
+              }
+            ]
+            }
+          ]
+        },
+        {
+          name:"Technicalspecs",
+          type:"array",
+          title:"Technical specs",
+          of:[
+            {
+              type:"object",
+              fields:[{
+                name:"Runtime",
+                title:"RunTime",
+                type:"string",
+              
+              },
+              {
+                name:"SoundMix",
+                title:"Sound Mix",
+                type:"string"
+              },{
+                name:"Color",
+                title:"Color",
+                type:"text",
+                rows:2
+              }
+            ]
+            }
+          ]
+        },
+        {
+          name:"FilmingProduction",
+          type:"array",
+          title:"Filming Production",
+          of:[
+            {
+              type:"object",
+              fields:[{
+                name:"Fliming",
+                title:"Fliming Location",
+                type:"string",
+              
+              },
+              {
+                name:"FilmingDates",
+                title:"Filming Dates",
+                type:"string"
+              },{
+                name:"ProductionDates",
+                title:"Production Dates",
+                type:"text",
+                rows:2
+              }
+            ]
+            }
+          ]
+        },
+        {
+          name:"Sites",
+          type:"array",
+          title:"Sites",
+          of:[
+            {
+              type:"object",
+              fields:[
+                {
+                  name:"SiteName",
+                  title:"Site Name",
+                  type:"string",
+                },
+                {
+                name:"Sites",
+                title:"Sites",
+                type:"string",
+              },
+             
+            ]
+            }
+          ]
+        }
     ],
     preview: {
         select: {

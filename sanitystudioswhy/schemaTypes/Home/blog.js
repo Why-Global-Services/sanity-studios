@@ -36,22 +36,22 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'Name',
       date: 'releaseDate',
-      media: 'poster',
-      castName0: 'castMembers.0.person.name',
-      castName1: 'castMembers.1.person.name',
+      media: 'Image',
+      // castName0: 'castMembers.0.person.name',
+      // castName1: 'castMembers.1.person.name',
     },
-    prepare(selection) {
-      const year = selection.date && selection.date.split('-')[0]
-      const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+    // prepare(selection) {
+    //   const year = selection.date && selection.date.split('-')[0]
+    //   const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
 
-      return {
-        title: 'Blog',
-        date: selection.date,
-        subtitle: cast,
-        media: selection.media,
-      }
-    },
+    //   return {
+    //     title: 'Blog',
+    //     date: selection.date,
+    //     subtitle: cast,
+    //     media: selection.media,
+    //   }
+    // },
   },
 })
