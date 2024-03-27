@@ -24,6 +24,8 @@ import webseries from './webseries/webseries'
 import blogcontent from './blog/blogcontent'
 import ads from './blog/ads'
 import blogDetails from './blog/blogDetails'
+import about from './Aboutus/about'
+import whatWeDo from './Home/whatWeDo'
 
 export const schemaTypes = [
   // Document types
@@ -33,10 +35,10 @@ export const schemaTypes = [
   banner,
   LatestMovies,
   tvshowclient,
-LastestmoviesSlide,
-Studios,
-Events,
- 
+  LastestmoviesSlide,
+  Studios,
+  Events,
+
   assosiatePartners,
   eventClient,
   blog,
@@ -48,6 +50,8 @@ Events,
   blogcontent,
   ads,
   blogDetails,
+  about,
+  whatWeDo,
   // Other types
   blockContent,
   plotSummary,
