@@ -10,6 +10,9 @@ import banner from './Home/banner'
 import LatestMovies from './Home/LatestMovies'
 import tvshowclient from './Home/tvshowclient'
 import LastestmoviesSlide from './Home/LastestmoviesSlide'
+import Studios from './Home/Studios'
+import Events from './Events/Events'
+
 import assosiatePartners from './Client/assosiatePartners'
 import eventClient from './Client/eventClient'
 import blog from './Home/blog'
@@ -30,7 +33,10 @@ export const schemaTypes = [
   banner,
   LatestMovies,
   tvshowclient,
-  LastestmoviesSlide,
+LastestmoviesSlide,
+Studios,
+Events,
+ 
   assosiatePartners,
   eventClient,
   blog,
