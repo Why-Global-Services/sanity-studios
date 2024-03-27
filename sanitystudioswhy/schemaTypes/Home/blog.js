@@ -1,9 +1,10 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md'
+// import {MdLocalMovies as icon} from 'react-icons/md'
+import { FaBlog as icon } from "react-icons/fa";
 
 export default defineType({
   name: 'Blog',
-  title: 'Blog',
+  title: 'BlogHome',
   type: 'document',
   icon,
   fields: [

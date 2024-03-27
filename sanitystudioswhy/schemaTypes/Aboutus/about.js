@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md';
+// import {MdLocalMovies as icon} from 'react-icons/md';
+import { IoMdPerson as icon } from "react-icons/io";
 
 export default defineType({
     name: 'AboutPage',

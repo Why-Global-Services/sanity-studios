@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md';
+// import {MdLocalMovies as icon} from 'react-icons/md';
+import { RiAdvertisementLine as icon } from "react-icons/ri";
 
 export default defineType({
     name: 'Ads',

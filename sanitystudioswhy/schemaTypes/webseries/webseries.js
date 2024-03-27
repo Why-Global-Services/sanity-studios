@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md'
+// import {MdLocalMovies as icon} from 'react-icons/md'
+import { SiWebstorm as icon} from "react-icons/si";
 
 export default defineType({
     name: 'WebSeries',
