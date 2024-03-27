@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md'
+// import {MdLocalMovies as icon} from 'react-icons/md'
+import { MdLiveTv as icon} from "react-icons/md";
 
 export default defineType({
     name: 'TvAdvertisement',

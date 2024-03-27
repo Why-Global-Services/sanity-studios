@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md';
+// import {MdLocalMovies as icon} from 'react-icons/md';
+import { GiFilmSpool as icon } from "react-icons/gi";
 
 export default defineType({
     name: 'BlogDetails',
