@@ -1,11 +1,11 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md'
+import { FaPeopleCarry as icon } from "react-icons/fa";
 
 export default defineType({
     name: 'EventClient',
     title: 'Event Client',
     type: 'document',
-    icon,
+    icon ,
    fields:[
   defineField({
       name:'Image',

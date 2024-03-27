@@ -1,6 +1,7 @@
 import {defineField, defineType} from 'sanity'
-// import { MdMovieEdit as icon } from "react-icons/md";
-import { MdMovie as icon } from 'react-icons/md'
+
+import { SiAndroidstudio as icon } from "react-icons/si";
+
 export default defineType({
     name:"studios",
     title:"Why Studio",

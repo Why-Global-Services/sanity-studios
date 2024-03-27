@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md'
+import { RiMovie2Fill as icon } from "react-icons/ri";
 
 
 // schemas/images.js
@@ -8,6 +8,7 @@ export default defineField({
     name: 'MovieDetail',
     title: 'Movie Detail',
     type: 'document',
+    icon,
     fields: [
         {
             name: 'BannerContent',
@@ -359,23 +360,13 @@ export default defineField({
     ],
     preview: {
         select: {
-          title: 'title',
+          title:'MovieName',
           date: 'releaseDate',
-          media: 'poster',
+          media: 'image',
           castName0: 'castMembers.0.person.name',
           castName1: 'castMembers.1.person.name',
         },
-        prepare(selection) {
-          const year = selection.date && selection.date.split('-')[0]
-          const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
-    
-          return {
-            title: 'MovieDetail',
-            date: selection.date,
-            subtitle: cast,
-            media: selection.media,
-          }
-        },
+        
       },
     })
   

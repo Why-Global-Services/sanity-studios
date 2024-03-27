@@ -1,9 +1,10 @@
 import {defineField, defineType} from 'sanity'
-
+import { MdEventAvailable as icon } from "react-icons/md";
 export default defineType({
     name:'activity',
     title: 'Event',
     type: 'document',
+    icon,
     fields: [
         defineField({
             name: 'name',

@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {MdLocalMovies as icon} from 'react-icons/md'
+import { FaUserFriends as icon } from "react-icons/fa"
 
 export default defineType({
     name: 'AssociatePartners',
