@@ -15,6 +15,12 @@ import eventClient from './Client/eventClient'
 import blog from './Home/blog'
 import movies from './MovieProduction/movies'
 import MovieDetail from './MovieProduction/MovieDetail'
+import tvshows from './Tvshows/tvshows'
+import tvads from './TvAdvertisement/tvads'
+import webseries from './webseries/webseries'
+import blogcontent from './blog/blogcontent'
+import ads from './blog/ads'
+import blogDetails from './blog/blogDetails'
 
 export const schemaTypes = [
   // Document types
@@ -30,6 +36,12 @@ export const schemaTypes = [
   blog,
   movies,
   MovieDetail,
+  tvshows,
+  tvads,
+  webseries,
+  blogcontent,
+  ads,
+  blogDetails,
   // Other types
   blockContent,
   plotSummary,
