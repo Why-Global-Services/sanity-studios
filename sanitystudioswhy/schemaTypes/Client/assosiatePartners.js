@@ -6,16 +6,54 @@ export default defineType({
     title: 'Associate Partners',
     type: 'document',
     icon,
+    groups:[
+      {
+        name:"seo",
+        title:"SEO",
+      },
+      {
+        name:"Main",
+        title:"Main",
+      }
+    ],
    fields:[
+    defineField({
+      name:"metaTitle",
+      title:"Meta Title",
+      type:"string",
+      group:"seo",
+    }),
+    defineField({
+      name:"MetaDescription",
+      title:"Meta Description",
+      type:"string",
+      group:"seo",
+    }),
+    defineField({
+      name:"AllData",
+      title:"All Data",
+      type:"string",
+      group:"seo",
+    }),
+    defineField({
+      name:"FocusKeyword",
+      title:"Focus Keyword",
+      type:"string",
+      group:"seo",
+    }),
     defineField({
     name:"partnersname",
     title:"Associate Partner Name",
-    type:"string"
+    type:"string",
+    validation:Rule=>Rule.required(),
+    group:"Main",
     }),
   defineField({
       name:'SelectTheImage',
       title:"Associate Partner Image",
-      type:"image"
+      type:"image",
+      validation:Rule=>Rule.required(),
+      group:"Main",
   }),
    ],
     preview: {

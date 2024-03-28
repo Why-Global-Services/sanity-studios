@@ -6,23 +6,63 @@ export default defineType({
     title:"Movie Slider",
     type:"document",
     icon,
+    groups:[
+        {
+          name:"seo",
+          title:"SEO",
+        },
+        {
+            name:"Main",
+            title:"Main",
+        }
+      ],
     fields:[
+        defineField({
+            name:"metaTitle",
+            title:"Meta Title",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"MetaDescription",
+            title:"Meta Description",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"AllData",
+            title:"All Data",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"FocusKeyword",
+            title:"Focus Keyword",
+            type:"string",
+            group:"seo",
+          }),
         defineField({
             name:"image",
             title:"Slider Image",
             type:"image",
             options: {hotspot: true},
+            validation:Rule=>Rule.required(),
+            group:"Main",
 
 }),defineField({
     name:"moviename",
     title:"Movie Name",
     type:"string",
+    validation:Rule=>Rule.required(),
+    group:"Main",
 }),
 defineField({
     name:"moviegenre",
     title:"Movie Genre",
     type:"text",
-    rows:3
+    rows:3,
+    validation:Rule=>Rule.required(),
+    group:"Main",
     
 })
 

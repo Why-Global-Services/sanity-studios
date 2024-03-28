@@ -7,31 +7,74 @@ export default defineType({
     title: 'Web series',
     type: 'document',
     icon,
+    groups:[
+      {
+        name:"seo",
+        title:"SEO",
+      },{
+        name:"Main",
+        title:"Main Content"
+      }
+    ],
     fields: [
+      defineField({
+        name:"metaTitle",
+        title:"Meta Title",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"MetaDescription",
+        title:"Meta Description",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"AllData",
+        title:"All Data",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"FocusKeyword",
+        title:"Focus Keyword",
+        type:"string",
+        group:"seo",
+      }),
       defineField({
         name: 'Image',
         title: 'Select Image',
         type: 'image',
+        group:"Main",
+        validation:Rule=>Rule.required(),
       }),
       defineField({
         name:"Title",
         title:"Title",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
       }),
       defineField({
           name: "Content",
           title: "Content",
           type:"text",
-          rows:10
+          group:"Main",
+          rows:10,
+          validation:Rule=>Rule.required(),
       }),
       defineField({
         name:"IMDBRating",
         title:"IMDB Rating",
         type:"number",
+        group:"Main",
+        validation:Rule=>Rule.required(),
       }),
       defineField({
         name:"ReleasingYear",
         title:"Releasing Year",
+        group:"Main",
+        validation:Rule=>Rule.required(),
         type:"number"
       })
     ],
@@ -40,6 +83,7 @@ export default defineType({
         title: 'Title',
         date: 'releaseDate',
         media: 'Image',
+        
         // castName0: 'castMembers.0.person.name',
         // castName1: 'castMembers.1.person.name',
       },
