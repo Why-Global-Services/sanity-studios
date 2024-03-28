@@ -7,17 +7,22 @@ export default defineType({
     type: 'document',
     icon,
    fields:[
+    defineField({
+    name:"partnersname",
+    title:"Associate Partner Name",
+    type:"string"
+    }),
   defineField({
       name:'SelectTheImage',
       title:"Associate Partner Image",
       type:"image"
-  })
+  }),
    ],
     preview: {
       select: {
-        title: 'title',
+        title: 'partnersname',
         date: 'releaseDate',
-        media: 'poster',
+        media: 'SelectTheImage',
         castName0: 'castMembers.0.person.name',
         castName1: 'castMembers.1.person.name',
       },
