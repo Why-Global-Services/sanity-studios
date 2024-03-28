@@ -19,6 +19,11 @@ export default defineType({
           type:"text",
           rows:10   
       }),
+      defineField({
+        name:"Name",
+        title:"Name",
+        type:"string",
+      })
     //   defineField({
     //     name: "name",
     //     title: "Content",
@@ -28,22 +33,22 @@ export default defineType({
     ],
     preview: {
       select: {
-        title: 'title',
+        title: 'Name',
         date: 'releaseDate',
         media: 'poster',
-        castName0: 'castMembers.0.person.name',
-        castName1: 'castMembers.1.person.name',
+        // castName0: 'castMembers.0.person.name',
+        // castName1: 'castMembers.1.person.name',
       },
-      prepare(selection) {
-        const year = selection.date && selection.date.split('-')[0]
-        const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+      // prepare(selection) {
+      //   const year = selection.date && selection.date.split('-')[0]
+      //   const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
   
-        return {
-          title: 'TvShows',
-          date: selection.date,
-          subtitle: cast,
-          media: selection.media,
-        }
-      },
+      //   return {
+      //     title: 'TvShows',
+      //     date: selection.date,
+      //     subtitle: cast,
+      //     media: selection.media,
+      //   }
+      // },
     },
   })
