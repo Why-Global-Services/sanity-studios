@@ -24,7 +24,7 @@ export default defineField({
                         title: 'Image',
                         type: 'image',
                         options: {
-                          hotspot: true, // Optional, for image cropping
+                          hotspot: true,
                         },
                       },
                       {
@@ -360,11 +360,11 @@ export default defineField({
     ],
     preview: {
         select: {
-          title:'MovieName',
+          title:'BannerContent.0.MovieName',
           date: 'releaseDate',
-          media: 'image',
-          castName0: 'castMembers.0.person.name',
-          castName1: 'castMembers.1.person.name',
+          media: 'BannerContent.0.image',
+          // castName0: 'castMembers.0.person.name',
+          // castName1: 'castMembers.1.person.name',
         },
         
       },
