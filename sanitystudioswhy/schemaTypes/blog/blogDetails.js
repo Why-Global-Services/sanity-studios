@@ -7,32 +7,64 @@ export default defineType({
     title: 'BlogDetails',
     type: 'document',
     icon,
+    groups:[
+      {
+        name:"seo",
+        title:"SEO",
+      },
+      {
+        name:"Main",
+        title:"Main",
+      }
+    ],
     fields:[
-    // defineField({
-    //   name:'Image',
-    //   title:"Select The Image",
-    //   type:"array",
-    //   of:[
-    //     { type: "block" },
-    //   ]
-    // }),
+      defineField({
+        name:"metaTitle",
+        title:"Meta Title",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"MetaDescription",
+        title:"Meta Description",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"AllData",
+        title:"All Data",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"FocusKeyword",
+        title:"Focus Keyword",
+        type:"string",
+        group:"seo",
+      }),
      defineField({
       name:"title",
       title:"Movie Title",
       type:"string",
+      validation:Rule=>Rule.required(),
+      group:"Main",
      }),
      defineField({
       name:"headingcontent",
       type:"text",
       title:"Heading Content",
-      rows:5
+      rows:5,
+      validation:Rule=>Rule.required(),
+      group:"Main",
 
      }),
      defineField({
       name:"firstcontent",
       type:"text",
       title:"First Content",
-      rows:5
+      rows:5,
+      validation:Rule=>Rule.required(),
+      group:"Main",
 
      }),
      defineField({
@@ -40,6 +72,8 @@ export default defineType({
       type:"image",
       title:"Movie Image",
       options: {hotspot: true},
+      validation:Rule=>Rule.required(),
+      group:"Main",
 
       
 
@@ -48,7 +82,9 @@ export default defineType({
       name:"secondcontent",
       type:"text",
       title:"Second Content",
-      rows:5
+      rows:5,
+      validation:Rule=>Rule.required(),
+      group:"Main",
 
      }),
 
@@ -56,18 +92,24 @@ export default defineType({
       name:"director",
       title:"Director Name",
       type:"text",
+      validation:Rule=>Rule.required(),
+      group:"Main",
     }),
     defineField({
       name:"directorimage",
       title:"Director Image",
       type:"image",
       options: {hotspot: true},
+      validation:Rule=>Rule.required(),
+      group:"Main",
     }),
     defineField({
       name:'aboutdirector',
       title:"About director",
       type:"text",
-      rows:5
+      rows:5,
+      validation:Rule=>Rule.required(),
+      group:"Main",
     })
  
    ],

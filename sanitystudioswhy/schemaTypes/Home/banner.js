@@ -6,12 +6,49 @@ export default defineType({
   title: 'Banner',
   type: 'document',
   icon,
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+    {
+      name:"Main",
+      title:"Main",
+    }
+  ],
  fields:[
-defineField({
-    name:'bannerContent',
-    title:"Bannercontent",
-    type:"string"
-})
+  defineField({
+    name:"metaTitle",
+    title:"Meta Title",
+    type:"string",
+    group:"seo",
+  }),
+  defineField({
+    name:"MetaDescription",
+    title:"Meta Description",
+    type:"string",
+    group:"seo",
+  }),
+  defineField({
+    name:"AllData",
+    title:"All Data",
+    type:"string",
+    group:"seo",
+  }),
+  defineField({
+    name:"FocusKeyword",
+    title:"Focus Keyword",
+    type:"string",
+    group:"seo",
+  }),
+    defineField({
+      name:'bannerContent',
+      title:"Bannercontent",
+      type:"string",
+      validation:Rule=>Rule.required(),
+      group:"Main",
+    }),
+    
  ],
   preview: {
     select: {

@@ -6,21 +6,61 @@ export default defineType({
     title: 'Movie',
     type: 'document',
     icon,
+    groups:[
+      {
+        name:"seo",
+        title:"SEO",
+      },
+      {
+        name:"Main",
+        title:"Main",
+      }
+    ],
     fields: [
+      defineField({
+        name:"metaTitle",
+        title:"Meta Title",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"MetaDescription",
+        title:"Meta Description",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"AllData",
+        title:"All Data",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
+        name:"FocusKeyword",
+        title:"Focus Keyword",
+        type:"string",
+        group:"seo",
+      }),
       defineField({
         name: 'Image',
         title: 'Select Movie Image',
         type: 'image',
+        validation:Rule=>Rule.required(),
+        group:"Main",
       }),
       defineField({
           name: "MovieName",
           title: "Title",
-          type:"string",    
+          type:"string",  
+          validation:Rule=>Rule.required(),  
+          group:"Main",
       }),
       defineField({
           name:"Category",
           title:"category",
-          type:"string"
+          type:"string",
+          validation:Rule=>Rule.required(),
+          group:"Main",
       }),
       
     ],

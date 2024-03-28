@@ -7,32 +7,76 @@ export default defineType({
   title: 'BlogHome',
   type: 'document',
   icon,
+  groups:[
+    {
+      name:"seo",
+      title:"SEO",
+    },
+    {
+      name:"Main",
+      title:"Main",
+    }
+  ],
   fields: [
+    defineField({
+      name:"metaTitle",
+      title:"Meta Title",
+      type:"string",
+      group:"seo",
+    }),
+    defineField({
+      name:"MetaDescription",
+      title:"Meta Description",
+      type:"string",
+      group:"seo",
+    }),
+    defineField({
+      name:"AllData",
+      title:"All Data",
+      type:"string",
+      group:"seo",
+    }),
+    defineField({
+      name:"FocusKeyword",
+      title:"Focus Keyword",
+      type:"string",
+      group:"seo",
+    }),
     defineField({
       name: 'Image',
       title: 'Select The Blog Image',
       type: 'image',
+      validation:Rule=>Rule.required(),
+      group:"Main",
     }),
     defineField({
         name: "Name",
-        title: "Title",
-        type:"string",    
+        title: "Name",
+        type:"string", 
+        validation:Rule=>Rule.required(), 
+        group:"Main",  
     }),
     defineField({
-        name:"Title",
-        title:"Name",
-        type:"string",
-    }),
+      name: "Title",
+      title: "Title",
+      type:"string", 
+      validation:Rule=>Rule.required(), 
+      group:"Main",  
+  }),
     defineField({
         name:"Author",
         title:"Author",
-        type:"string"
+        type:"string",
+        validation:Rule=>Rule.required(),
+        group:"Main",
     }),
     defineField({
         name:"Content",
         title:"Content",
         type:"text",
         rows:5,
+        validation:Rule=>Rule.required(),
+        group:"Main",
     }),
   ],
   preview: {

@@ -7,47 +7,97 @@ export default defineType({
     title: 'AboutPage',
     type: 'document',
     icon,
+    groups:[
+        {
+          name:"seo",
+          title:"SEO",
+        },
+        {
+          name:"Main",
+          title:"Main",
+        }
+      ],
     fields:[
+        defineField({
+            name:"metaTitle",
+            title:"Meta Title",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"MetaDescription",
+            title:"Meta Description",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"AllData",
+            title:"All Data",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"FocusKeyword",
+            title:"Focus Keyword",
+            type:"string",
+            group:"seo",
+          }),
     defineField({
       name:'Image',
       title:"Select The Image",
       type:"image",
+      group:"Main",
+      validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"Name",
         title:" Name",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"Role",
         title:"Role",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"Description",
         title:"Description",
         type:"text",
         rows:5,
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"Facebook",
         title:"FaceBook URL",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"LinkedIn",
         title:"LinkedIn URL",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"Youtube",
         title:"YouTube URL",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
     defineField({
         name:"Twitter",
         title:"Twitter URL",
         type:"string",
+        group:"Main",
+        validation:Rule=>Rule.required(),
     }),
    ],
     preview: {
