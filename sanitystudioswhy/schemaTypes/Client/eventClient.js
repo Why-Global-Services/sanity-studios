@@ -2,8 +2,8 @@ import {defineField, defineType} from 'sanity'
 import { FaPeopleCarry as icon } from "react-icons/fa";
 
 export default defineType({
-    name: 'EventClient',
-    title: 'Event Client',
+    name: 'EventClients',
+    title: 'Event Clients',
     type: 'document',
     icon ,
     groups:[
@@ -41,26 +41,39 @@ export default defineType({
       type:"string",
       group:"seo",
     }),
-  defineField({
-      name:'Image',
-      title:"Select The Event Client Image",
-      type:"image",
-      validation:Rule=>Rule.required(),
+    defineField({
+      name:"EventClient",
+      title:"Event Clinet",
+      type:"array",
       group:"Main",
-  }),
-  defineField({
-    name:"Name",
-    title:"Name",
-    type:"string",
-    validation:Rule=>Rule.required(),
-    group:"Main",
-  })
+      of:[
+        {
+          type:"object",
+          fields:[
+            {
+              name:'Image',
+              title:"Select The Event Client Image",
+              type:"image",
+              validation:Rule=>Rule.required(),
+             
+          },
+          {
+            name:"Name",
+            title:"Name",
+            type:"string",
+            validation:Rule=>Rule.required(),
+          }
+          ]
+        }
+      ]
+    })
+  
    ],
     preview: {
       select: {
         title: 'Name',
         date: 'releaseDate',
-        media: 'Image',
+        media: 'icon',
         // castName0: 'castMembers.0.person.name',
         // castName1: 'castMembers.1.person.name',
       },

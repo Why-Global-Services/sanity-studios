@@ -35,6 +35,7 @@ export default defineType({
       type:"string",
       group:"seo",
     }),
+
     defineField({
       name:"FocusKeyword",
       title:"Focus Keyword",
@@ -42,28 +43,42 @@ export default defineType({
       group:"seo",
     }),
     defineField({
-      name: 'Image',
-      title: 'TV  Show Image',
-      type: 'image',
-      options: {hotspot: true},
-      validation:Rule=>Rule.required(),
+      name:"TvShowClients",
+      title:"TV Show Clients",
+      type:"array",
       group:"Main",
-    }),
-    defineField({
-        name:"Name",
-        title:"Client Name",
-        type:"string",
-        validation:Rule=>Rule.required(),
-        group:"Main",
-    }),
-    defineField({
-        name:"Content",
-        title:"Content",
-        type:"text",
-        rows:10,
-        validation:Rule=>Rule.required(),
-        group:"Main",
-    }),
+      of:[
+        {
+          type:"object",
+          fields:[
+            {
+              name: 'Image',
+              title: 'TV  Show Image',
+              type: 'image',
+              options: {hotspot: true},
+              validation:Rule=>Rule.required(),
+              
+            },
+            {
+                name:"Name",
+                title:"Client Name",
+                type:"string",
+                validation:Rule=>Rule.required(),
+                
+            },
+            {
+                name:"Content",
+                title:"Content",
+                type:"text",
+                rows:10,
+                validation:Rule=>Rule.required(),
+                
+            },
+          ]
+        }
+      ]
+      
+    })
   ],
   preview: {
     select: {

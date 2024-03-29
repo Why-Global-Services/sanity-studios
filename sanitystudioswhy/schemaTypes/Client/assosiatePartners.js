@@ -42,19 +42,30 @@ export default defineType({
       group:"seo",
     }),
     defineField({
-    name:"partnersname",
-    title:"Associate Partner Name",
-    type:"string",
-    validation:Rule=>Rule.required(),
-    group:"Main",
-    }),
-  defineField({
-      name:'SelectTheImage',
-      title:"Associate Partner Image",
-      type:"image",
-      validation:Rule=>Rule.required(),
+      name:"associatePartner",
+      title:"Associate Partner",
+      type:"array",
       group:"Main",
-  }),
+      of:[
+        {
+          type:"object",
+          fields:[
+          {
+          name:"partnersname",
+          title:"Associate Partner Name",
+          type:"string",
+          validation:Rule=>Rule.required(),
+          },
+          {
+            name:'SelectTheImage',
+            title:"Associate Partner Image",
+            type:"image",
+            validation:Rule=>Rule.required(),
+          }
+        ],
+        }
+      ]
+    })
    ],
     preview: {
       select: {

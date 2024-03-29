@@ -49,7 +49,7 @@ export default defineType({
               {type:"reference",
                 to:[
                   {type:"AssociatePartners"},
-                  {type:"EventClient"},
+                  {type:"EventClients"},
                   {
                     type:"Tvshowsclient",
                   },
