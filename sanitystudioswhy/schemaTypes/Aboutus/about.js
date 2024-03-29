@@ -42,63 +42,69 @@ export default defineType({
             type:"string",
             group:"seo",
           }),
-    defineField({
-      name:'Image',
-      title:"Select The Image",
-      type:"image",
-      group:"Main",
-      validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"Name",
-        title:" Name",
-        type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"Role",
-        title:"Role",
-        type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"Description",
-        title:"Description",
-        type:"text",
-        rows:5,
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"Facebook",
-        title:"FaceBook URL",
-        type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"LinkedIn",
-        title:"LinkedIn URL",
-        type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"Youtube",
-        title:"YouTube URL",
-        type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
-    defineField({
-        name:"Twitter",
-        title:"Twitter URL",
-        type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-    }),
+          defineField({
+            name:"about",
+            title:"About",
+            type:"array",
+            group:"Main",
+            of:[
+              {
+                type:"object",
+                fields:[
+                  {
+                    name:'Image',
+                    title:"Select The Image",
+                    type:"image",
+                    validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"Name",
+                      title:" Name",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"Role",
+                      title:"Role",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"Description",
+                      title:"Description",
+                      type:"text",
+                      rows:5,
+                      validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"Facebook",
+                      title:"FaceBook URL",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"LinkedIn",
+                      title:"LinkedIn URL",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"Youtube",
+                      title:"YouTube URL",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                  },
+                  {
+                      name:"Twitter",
+                      title:"Twitter URL",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                  },
+                ]
+              }
+            ]
+          })
+    
    ],
     preview: {
       select: {
