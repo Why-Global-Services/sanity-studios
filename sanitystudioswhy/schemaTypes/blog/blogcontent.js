@@ -42,31 +42,49 @@ export default defineType({
         type:"string",
         group:"seo",
       }),
-    defineField({
-      name:'Image',
-      title:"Select The Image",
-      type:"image",
-      validation:Rule=>Rule.required(),
-      group:"Main",
-    }),
-    defineField({
-        name:'name',
-        title:'Name',
-        type:'string',
-        validation:Rule=>Rule.required(),
+      defineField({
+        name:"Blogbasic",
+        title:"Blog Basic",
+        type:"array",
+        of:[
+          {
+            type:"object",
+            fields:[
+              {
+                name: 'movieimage',
+                title: 'Select Movie Image',
+                type: 'image',
+                validation:Rule=>Rule.required(),
+                
+              },{
+                name: "title",
+                title: "Title",
+                type:"string",  
+                validation:Rule=>Rule.required(),  
+                
+            },
+            {
+              name:"Category",
+              title:"category",
+              type:"string",
+              validation:Rule=>Rule.required(),
+              
+          }
+            ]
+          }
+        ]
+      }),
+      defineField({
+        name:"BlogDetails",
+        title:"Blog Details",
+        type:"array",
         group:"Main",
-    }),
-    defineField({
-        name:'category',
-        title:"Genre",
-        type:'string',
-        validation:Rule=>Rule.required(),
-        group:"Main",
-    })
-   ],
+        of:[{type:"reference",to:[{type:"BlogDetails"}]}]
+      })
+    ],
     preview: {
       select: {
-        title: 'name',
+        title: 'BlogPage',
         date: 'releaseDate',
         media: 'Image',
         // castName0: 'castMembers.0.person.name',
