@@ -23,6 +23,7 @@ import ads from './blog/ads'
 import blogDetails from './blog/blogDetails'
 import about from './Aboutus/about'
 import whatWeDo from './Home/whatWeDo'
+import ourClient from './OurClients/ourClient'
 
 export const schemaTypes = [
   // Document types
@@ -33,7 +34,7 @@ export const schemaTypes = [
   LastestmoviesSlide,
   Studios,
   Events,
-
+  ourClient,
   assosiatePartners,
   eventClient,
   blog,
