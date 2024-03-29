@@ -42,41 +42,61 @@ export default defineType({
         group:"seo",
       }),
       defineField({
-        name: 'Image',
-        title: 'Select Image',
-        type: 'image',
-        group:"Main",
-        validation:Rule=>Rule.required(),
-      }),
-      defineField({
-        name:"Title",
-        title:"Title",
+        name:"url",
+        title:"Link url",
         type:"string",
-        group:"Main",
-        validation:Rule=>Rule.required(),
+        group:"seo",
       }),
+
       defineField({
-          name: "Content",
-          title: "Content",
-          type:"text",
-          group:"Main",
-          rows:10,
-          validation:Rule=>Rule.required(),
-      }),
-      defineField({
-        name:"IMDBRating",
-        title:"IMDB Rating",
-        type:"number",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-      }),
-      defineField({
-        name:"ReleasingYear",
-        title:"Releasing Year",
-        group:"Main",
-        validation:Rule=>Rule.required(),
-        type:"number"
+        name:"series",
+        title:"Series",
+        type:"array",
+        of:[
+          {
+            type:"object",
+            fields:[
+              {
+                name: 'Image',
+                title: 'Select Image',
+                type: 'image',
+                
+                validation:Rule=>Rule.required(),
+              },{
+                name:"Title",
+                title:"Title",
+                type:"string",
+                
+                validation:Rule=>Rule.required(),
+              },
+              {
+                name: "Content",
+                title: "Content",
+                type:"text",
+                
+                rows:10,
+                validation:Rule=>Rule.required(),
+            },
+            {
+              name:"IMDBRating",
+              title:"IMDB Rating",
+              type:"number",
+              
+              validation:Rule=>Rule.required(),
+            },{
+              name:"ReleasingYear",
+              title:"Releasing Year",
+              
+              validation:Rule=>Rule.required(),
+              type:"number"
+            }
+            ]
+          }
+        ]
+        
+      
       })
+   
     ],
     preview: {
       select: {

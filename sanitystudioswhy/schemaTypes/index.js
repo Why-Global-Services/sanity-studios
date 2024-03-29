@@ -26,6 +26,7 @@ import whatWeDo from './Home/whatWeDo'
 
 export const schemaTypes = [
   // Document types
+  
   banner,
   LatestMovies,
   tvshowclient,

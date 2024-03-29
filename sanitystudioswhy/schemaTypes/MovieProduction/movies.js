@@ -42,46 +42,66 @@ export default defineType({
         group:"seo",
       }),
       defineField({
-        name: 'Image',
-        title: 'Select Movie Image',
-        type: 'image',
-        validation:Rule=>Rule.required(),
+        name:"moviebasic",
+        title:"Movie Basic",
+        type:"array",
+        of:[
+          {
+            type:"object",
+            fields:[
+              {
+                name: 'Image',
+                title: 'Select Movie Image',
+                type: 'image',
+                validation:Rule=>Rule.required(),
+                
+              },{
+                name: "MovieName",
+                title: "Title",
+                type:"string",  
+                validation:Rule=>Rule.required(),  
+                
+            },
+            {
+              name:"Category",
+              title:"category",
+              type:"string",
+              validation:Rule=>Rule.required(),
+              
+          }
+            ]
+          }
+        ]
+      }),
+      
+      
+      defineField({
+        name:"Moviedetails",
+        title:"moviedetails",
+        type:"array",
         group:"Main",
-      }),
-      defineField({
-          name: "MovieName",
-          title: "Title",
-          type:"string",  
-          validation:Rule=>Rule.required(),  
-          group:"Main",
-      }),
-      defineField({
-          name:"Category",
-          title:"category",
-          type:"string",
-          validation:Rule=>Rule.required(),
-          group:"Main",
-      }),
+        of:[{type:"reference",to:[{type:"MovieDetail"}]}]
+      })
       
     ],
     preview: {
       select: {
-        title: 'MovieName',
+        title: 'Movie List',
         date: 'releaseDate',
         media: 'Image',
         // castName0: 'castMembers.0.person.name',
         // castName1: 'castMembers.1.person.name',
       },
-      // prepare(selection) {
-      //   const year = selection.date && selection.date.split('-')[0]
-      //   const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+      prepare(selection) {
+        const year = selection.date && selection.date.split('-')[0]
+        const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
   
-      //   return {
-      //     title: 'Movie',
-      //     date: selection.date,
-      //     subtitle: cast,
-      //     media: selection.media,
-      //   }
-      // },
+        return {
+          title: 'Movies List',
+          date: selection.date,
+          subtitle: cast,
+          media: selection.media,
+        }
+      },
     },
   })

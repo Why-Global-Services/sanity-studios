@@ -25,6 +25,13 @@ export default defineType({
         group:"seo",
       }),
       defineField({
+    name:"url",
+    title:"Url",
+    type:"url",
+    validation:Rule=>Rule.required(),
+    group:"seo",
+      }),
+      defineField({
         name:"MetaDescription",
         title:"Meta Description",
         type:"string",
@@ -43,27 +50,40 @@ export default defineType({
         group:"seo",
       }),
       defineField({
-        name: 'Image',
-        title: 'Tv Shows Url',
-        type: 'text',
-        validation:Rule=>Rule.required(),
-        group:"Main",
-      }),
-      defineField({
-          name: "Content",
-          title: "Content",
-          type:"text",
-          rows:10  ,
-          validation:Rule=>Rule.required(), 
-          group:"Main",
-      }),
-      defineField({
-        name:"Name",
-        title:"Name",
-        type:"string",
-        validation:Rule=>Rule.required(),
-        group:"Main",
+        name:"tvshow",
+        type:"array",
+        title:"TV Show List",
+        of:[{
+          type:"object",
+          fields:[
+            {
+              name: 'Image',
+              title: 'Tv Shows Youtube Url',
+              type: 'text',
+              validation:Rule=>Rule.required(),
+              
+            },
+            {
+              name: "Content",
+              title: "Content",
+              type:"text",
+              rows:10  ,
+              validation:Rule=>Rule.required(), 
+              
+          },{
+            name:"Name",
+            title:"Name",
+            type:"string",
+            validation:Rule=>Rule.required(),
+            
+          }
+
+          ]
+        }
+        ]
+        
       })
+     
     //   defineField({
     //     name: "name",
     //     title: "Content",

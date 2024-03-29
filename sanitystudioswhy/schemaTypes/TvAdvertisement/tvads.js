@@ -37,35 +37,52 @@ export default defineType({
         group:"seo",
       }),
       defineField({
+        name:"url",
+        title:"Link url",
+        type:"string",
+        group:"seo",
+      }),
+      defineField({
         name:"FocusKeyword",
         title:"Focus Keyword",
         type:"string",
         group:"seo",
       }),
       defineField({
-        name: 'Image',
-        title: 'Tv Shows Url',
-        type: 'text',
-        placeholder:"(kindly Copy the Source from the Embeded Link Provided in Youtube )",
-        rows:3,
-        validation:Rule=>Rule.required(),
-        group:"Main",
-      }),
-      defineField({
-        name:"Title",
-        title:"Title",
-        type:"string",
-        validation:Rule=>Rule.required(),
-        group:"Main",
-      }),
-      defineField({
-          name: "Content",
-          title: "Content",
-          type:"text",
-          rows:10,
-          validation:Rule=>Rule.required(),
-          group:"Main",
-      }),
+        name:"tvad",
+        title:"Tv Ad List",
+        type:"array",
+        of:[
+          {
+            type:"object",
+            fields:[
+              {
+                name: 'Image',
+                title: 'Tv Shows Url',
+                type: 'text',
+                placeholder:"(kindly Copy the Source from the Embeded Link Provided in Youtube )",
+                rows:3,
+                validation:Rule=>Rule.required(),
+                
+              },{
+                name:"Title",
+                title:"Title",
+                type:"string",
+                validation:Rule=>Rule.required(),
+              
+              },{
+                name: "Content",
+                title: "Content",
+                type:"text",
+                rows:10,
+                validation:Rule=>Rule.required(),
+                
+            }
+            ]
+          }
+        ]
+      })
+
     ],
     preview: {
       select: {
