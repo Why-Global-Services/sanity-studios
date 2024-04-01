@@ -41,41 +41,45 @@ export default defineType({
             group:"seo",
           }),
         defineField({
-            name:"Title",
-            title:"Meta Data",
-            type:"string",
-            group:"seo",
-        }),
-        defineField({
-            name: 'name',
-            title: 'Event name',
-            type:'text',
-            validation:Rule=>Rule.required(),
-            group:"Main",
-            
-        }),
-        defineField({
-            name: 'category',
-            title: 'Category',
-            type:'text',
-            validation:Rule=>Rule.required(),
-            group:"Main",
-        }),
-        defineField({
-            name: 'year',
-            title: 'Year',
-            type: 'string',
-            validation:Rule=>Rule.required(),
-            group:"Main",
-        }),
-        defineField({
-            name: 'eventimage',
-            title: 'Event image',
-            type: 'image',
-            options:{hotspot:true},
-            validation:Rule=>Rule.required(),
-            group:"Main",
-        }),
+          name:"MainEvents",
+          title:"Main event",
+          type:"array",
+          validation:Rule=>Rule.required(),
+          group:"Main",
+          of:[
+            {
+            type:"object",
+            fields:[
+              {
+                name: 'name',
+                title: 'Event name',
+                type:'text',
+                validation:Rule=>Rule.required(),
+                
+            },
+            {
+                name: 'category',
+                title: 'Category',
+                type:'text',
+                validation:Rule=>Rule.required(),
+            },
+            {
+                name: 'year',
+                title: 'Year',
+                type: 'string',
+                validation:Rule=>Rule.required(),
+            },
+            {
+                name: 'eventimage',
+                title: 'Event image',
+                type: 'image',
+                options:{hotspot:true},
+                validation:Rule=>Rule.required(),
+            },
+            ]}
+          ],
+        })
+      ,
      
     
     ],preview:{
