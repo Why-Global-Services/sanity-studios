@@ -90,16 +90,16 @@ export default defineType({
         // castName0: 'castMembers.0.person.name',
         // castName1: 'castMembers.1.person.name',
       },
-      // prepare(selection) {
-      //   const year = selection.date && selection.date.split('-')[0]
-      //   const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+      prepare(selection) {
+        const year = selection.date && selection.date.split('-')[0]
+        const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
   
-      //   return {
-      //     title: "BlogPage",
-      //     date: selection.date,
-      //     subtitle: cast,
-      //     media: selection.media,
-      //   }
-      // },
+        return {
+          title: "BlogPage",
+          date: selection.date,
+          subtitle: cast,
+          media: selection.media,
+        }
+      },
     },
   })
