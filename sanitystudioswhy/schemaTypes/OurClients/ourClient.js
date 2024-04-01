@@ -41,30 +41,98 @@ export default defineType({
             group:"seo",
           }),
           defineField({
-            name:"ourClient",
-            title:"Our Client Page",
-            group:"Main",
+            name:"url",
+            title:"Link url",
+            type:"string",
+            group:"seo",
+          }),
+          defineField({
+            name:"eventclient",
+            title:"Event Client List",
+           
             type:'array',
             of:[
-              {type:"reference",
-                to:[
-                  {type:"AssociatePartners"},
-                  {type:"EventClients"},
+              {type:"object",
+              fields:[
+                {
+                  name:'Image',
+                  title:"Select The Event Client Image",
+                  type:"image",
+                  validation:Rule=>Rule.required(),
+                 
+              },
+              {
+                name:"Name",
+                title:"Name",
+                type:"string",
+                validation:Rule=>Rule.required(),
+              }
+              ]
+            }
+        ]
+          }),
+
+          defineField({
+            name:"assosiatePartner",
+            title:"Associate Partner List",
+            type:"array",
+            of:[
+              {
+                type:"object",
+                fields:[
                   {
-                    type:"Tvshowsclient",
+                  name:"partnersname",
+                  title:"Associate Partner Name",
+                  type:"string",
+                  validation:Rule=>Rule.required(),
+                  },
+                  {
+                    name:'SelectTheImage',
+                    title:"Associate Partner Image",
+                    type:"image",
+                    validation:Rule=>Rule.required(),
+                  }
+                ],
+              }
+            ]
+          
+          }),
+          defineField({
+            name:"TvShowClients",
+            title:"TV Show Clients",
+            type:"array",
+            group:"Main",
+            of:[
+              {
+                type:"object",
+                fields:[
+                  {
+                    name: 'Image',
+                    title: 'TV  Show Image',
+                    type: 'image',
+                    options: {hotspot: true},
+                    validation:Rule=>Rule.required(),
+                    
+                  },
+                  {
+                      name:"Name",
+                      title:"Client Name",
+                      type:"string",
+                      validation:Rule=>Rule.required(),
+                      
+                  },
+                  {
+                      name:"Content",
+                      title:"Content",
+                      type:"text",
+                      rows:10,
+                      validation:Rule=>Rule.required(),
+                      
                   },
                 ]
-              },
-          // {
-          //   type:"reference",
-          // },
-          // {
-          //   type:"reference",
-          //   to:{
-          //     type:"Tvshowsclient"
-          //   }
-          // }
-        ]
+              }
+            ]
+            
           })
     ]
 
