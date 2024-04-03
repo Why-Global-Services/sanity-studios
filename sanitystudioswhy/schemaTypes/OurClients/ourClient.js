@@ -1,4 +1,6 @@
+
 import {defineField, defineType} from 'sanity';
+
 
 export default defineType({
     name:"OurClient",
@@ -151,7 +153,7 @@ export default defineType({
           title: "Our Clients",
           date: selection.date,
           subtitle: cast,
-          media: selection.media,
+          
         }
       },
      

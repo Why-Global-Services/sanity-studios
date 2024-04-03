@@ -87,6 +87,15 @@ export default defineType({
             title: 'name',
             media: 'eventimage',
         },
+        prepare(selection) {
+          const year = selection.date && selection.date.split('-')[0]
+          const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ')
+    
+          return {
+            title: "EVENTS",
+          
+          }
+        },
     }
     
 })

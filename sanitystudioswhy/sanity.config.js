@@ -3,6 +3,8 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 //import {googleMapsInput} from '@sanity/google-maps-input'
 import {schemaTypes} from './schemaTypes'
+import  myStructure  from './schemaTypes/plotSummaries'
+import  myStructures  from './schemaTypes/plotSummary'
 
 export default defineConfig({
   name: 'default',
@@ -12,8 +14,11 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    structureTool(),
+    structureTool({
+      structure:myStructure
+    }),
     visionTool(),
+    
     //googleMapsInput(),
   ],
 
