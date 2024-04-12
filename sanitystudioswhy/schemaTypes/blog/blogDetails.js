@@ -117,7 +117,7 @@ export default defineType({
       select: {
         title: 'title',
         date: 'releaseDate',
-        media: 'directorimage',
+        media: 'movieimage',
        
       },
       

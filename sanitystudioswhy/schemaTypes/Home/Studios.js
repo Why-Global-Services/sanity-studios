@@ -19,38 +19,12 @@ export default defineType({
       ],
     fields:[
         defineField({
-            name:"metaTitle",
-            title:"Meta Title",
-            type:"string",
-            group:"seo",
-          }),
-          defineField({
-            name:"MetaDescription",
-            title:"Meta Description",
-            type:"string",
-            group:"seo",
-          }),
-          defineField({
-            name:"AllData",
-            title:"All Data",
-            type:"string",
-            group:"seo",
-          }),
-          defineField({
-            name:"FocusKeyword",
-            title:"Focus Keyword",
-            type:"string",
-            group:"seo",
-          }),
-        defineField({
             name:"heading",
             title:"First Heading",
             type:"text",
             rows:3,
             validation:Rule=>Rule.required(),
             group:"Main",
-           
-
 }),
 
 defineField({

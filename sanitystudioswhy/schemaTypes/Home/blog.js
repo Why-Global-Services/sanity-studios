@@ -7,9 +7,17 @@ export default defineType({
   title: 'BlogHome',
   type: 'document',
   icon,
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+    {
+      name: 'Main',
+      title: 'Main',
+    },
+  ],
   fields:[
-
-
     defineField({
       name: 'Image',
       title: 'Select The Blog Image',

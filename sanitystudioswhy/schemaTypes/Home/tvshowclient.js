@@ -6,79 +6,50 @@ export default defineType({
   title: 'Tv Shows Client',
   type: 'document',
   icon,
-  groups:[
+  groups: [
     {
-      name:"seo",
-      title:"SEO",
+      name: 'seo',
+      title: 'SEO',
     },
     {
-      name:"Main",
-      title:"Main",
-    }
+      name: 'Main',
+      title: 'Main',
+    },
   ],
   fields: [
     defineField({
-      name:"metaTitle",
-      title:"Meta Title",
-      type:"string",
-      group:"seo",
-    }),
-    defineField({
-      name:"MetaDescription",
-      title:"Meta Description",
-      type:"string",
-      group:"seo",
-    }),
-    defineField({
-      name:"AllData",
-      title:"All Data",
-      type:"string",
-      group:"seo",
-    }),
-
-    defineField({
-      name:"FocusKeyword",
-      title:"Focus Keyword",
-      type:"string",
-      group:"seo",
-    }),
-    defineField({
-      name:"TvShowClients",
-      title:"TV Show Clients",
-      type:"array",
-      group:"Main",
-      of:[
+      name: 'TvShowClients',
+      title: 'TV Show Clients',
+      type: 'array',
+      group: 'Main',
+      of: [
         {
-          type:"object",
-          fields:[
+          type: 'object',
+          fields: [
             {
               name: 'Image',
               title: 'TV  Show Image',
               type: 'image',
               options: {hotspot: true},
-              validation:Rule=>Rule.required(),
-              
+              validation: (Rule) => Rule.required(),
             },
             {
-                name:"Name",
-                title:"Client Name",
-                type:"string",
-                validation:Rule=>Rule.required(),
-                
+              name: 'Name',
+              title: 'Client Name',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
             },
             {
-                name:"Content",
-                title:"Content",
-                type:"text",
-                rows:10,
-                validation:Rule=>Rule.required(),
-                
+              name: 'Content',
+              title: 'Content',
+              type: 'text',
+              rows: 10,
+              validation: (Rule) => Rule.required(),
             },
-          ]
-        }
-      ]
-      
-    })
+          ],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
